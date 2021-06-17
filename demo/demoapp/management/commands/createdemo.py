@@ -23,7 +23,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-home',
+            icon='fas fa-home',
             only_icon=False
         )
         blog = MenuItem.objects.create(
@@ -35,7 +35,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-edit',
+            icon='fas fa-edit',
             only_icon=False
         )
         blogentry = MenuItem.objects.create(
@@ -96,7 +96,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-home',
+            icon='fas fa-home',
             only_icon=False
         )
 
@@ -109,7 +109,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-home',
+            icon='fas fa-home',
             only_icon=False
         )
         MenuItem.objects.create(
@@ -121,7 +121,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-eyedropper',
+            icon='fas fa-eye-dropper',
             only_icon=False
         )
         MenuItem.objects.create(
@@ -133,7 +133,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-diamond',
+            icon='fas fa-gem',
             only_icon=False
         )
         inputmask = MenuItem.objects.create(
@@ -145,7 +145,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-cutlery',
+            icon='fas fa-utensils',
             only_icon=False
         )
         daterange = MenuItem.objects.create(
@@ -157,7 +157,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-balance-scale',
+            icon='fas fa-balance-scale',
             only_icon=False
         )
         tagging = MenuItem.objects.create(
@@ -169,7 +169,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-superpowers',
+            icon='fas fa-deaf',
             only_icon=False
         )
         Tinymce = MenuItem.objects.create(
@@ -181,7 +181,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-sticky-note',
+            icon='fas fa-deaf',
             only_icon=False
         )
         chart = MenuItem.objects.create(
@@ -193,7 +193,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-line-chart',
+            icon='fas fa-chart-line',
             only_icon=False
         )
         noti = MenuItem.objects.create(
@@ -256,7 +256,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-power-off',
+            icon='fas fa-power-off',
             only_icon=False
         )
 
@@ -269,7 +269,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-power-off',
+            icon='fas fa-power-off',
             only_icon=False
         )
         MenuItem.objects.create(
@@ -281,7 +281,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-power-off',
+            icon='fas fa-power-off',
             only_icon=False
         )
         MenuItem.objects.create(
@@ -293,7 +293,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-table',
+            icon='fas fa-table',
             only_icon=False
         )
         item = MenuItem.objects.create(
@@ -305,7 +305,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-power-off',
+            icon='fas fa-power-off',
             only_icon=True
         )
 
@@ -344,7 +344,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-home',
+            icon='fas fa-home',
             only_icon=False
         )
         MenuItem.objects.create(
@@ -356,7 +356,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-power-off',
+            icon='fas fa-power-off',
             only_icon=False
         )
         MenuItem.objects.create(
@@ -368,7 +368,7 @@ class Command(BaseCommand):
             reversed_kwargs=None,
             reversed_args=None,
             is_widget=False,
-            icon='fa fa-power-off',
+            icon='fas fa-power-off',
             only_icon=False
         )
 

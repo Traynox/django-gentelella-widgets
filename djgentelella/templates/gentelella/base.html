@@ -21,7 +21,6 @@
 
       {% block stylesheets %}
         <!-- Bootstrap -->
-
         <link href="{% static 'vendors/bootstrap/bootstrap.min.css' %}?v={% get_version %}" rel="stylesheet">
         <link href="{% static 'vendors/jquery-ui/jquery-ui.css' %}?v={% get_version %}" rel="stylesheet">
         <link href="{% static 'vendors/font-awesome/font-awesome.min.css' %}?v={% get_version %}" rel="stylesheet">
@@ -37,7 +36,6 @@
         <link href="{% static 'vendors/grid-slider/ion.rangeSlider.min.css' %}?v={% get_version %}" rel="stylesheet">
         <link href="{% static 'vendors/tinymce/skin.min.css' %}?v={% get_version %}" rel="stylesheet" />
         <link href="{% static 'vendors/sweetalert2/sweetalert2.min.css' %}?v={% get_version %}" rel="stylesheet" />
-
         {% get_define 'use_chartjs' as use_chartjs %}
         {% if use_chartjs %}
         <link href="{% static 'vendors/chartjs/Chart.min.css' %}?v={% get_version %}" rel="stylesheet">
@@ -55,6 +53,8 @@
     {% block extra_css %} {% endblock %}
     <!-- jQuery -->
     <script src="{% static 'vendors/jquery/jquery.min.js' %}?v={% get_version %}"></script>
+    <script src="{% static 'vendors/bootstrap/popper.min.js' %}?v={% get_version %}"></script>
+
     <!-- Bootstrap -->
     <script src="{% static 'vendors/bootstrap/bootstrap.min.js' %}?v={% get_version %}"></script>
     <script>
@@ -79,7 +79,7 @@
 
   <body class="{% block body_class %}nav-md {% endblock body_class %}">
     {% block body %}
-      <div class="container body">
+      <div class="body">
         <div class="main_container">
 
           {% block sidebar %}
@@ -161,7 +161,7 @@
         <script src="{% static 'vendors/tinymce/jquery.tinymce.min.js' %}?v={% get_version %}"></script>
         <script src="{% static 'vendors/tinymce/tinymce-all.js' %}?v={% get_version %}"></script>
         <script src="{% static 'vendors/sweetalert2/sweetalert2.all.min.js' %}?v={% get_version %}"></script>
-            {% get_define 'use_datatables' as use_datatables %}
+        {% get_define 'use_datatables' as use_datatables %}
         {% if use_datatables %}
         <script src="{% static 'vendors/datatables/jquery.dataTables.min.js' %}?v={% get_version %}"></script>
         <script src="{% static 'vendors/datatables/dataTables.bootstrap.min.js' %}?v={% get_version %}"></script>
