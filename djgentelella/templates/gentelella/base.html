@@ -50,8 +50,29 @@
 
     {% endblock stylesheets %}
       <!-- Custom Theme Style -->
-      <link href="{% static 'gentelella/css/custom.css' %}?v={% get_version %}" rel="stylesheet">
-    {% endblock head %}
+      {% define_true 'use_black_and_white_style'%}
+      {% define_true 'use_upo_style' %}
+      {% define_true 'use_default_style' %}
+      {% define_true 'use_black_and_white_upo_style' %}
+      {% get_define 'use_default_style' as default_style %}
+
+      {% if default_style %}
+          <link href="{% static 'gentelella/css/custom.css' %}?v={% get_version %}" rel="stylesheet">
+      {% endif %}
+
+      {% if black_and_white_style %}
+          <link href="{% static 'gentelella/css/style_black_and_white.css' %}?v={% get_version %}" rel="stylesheet">
+      {% endif %}
+
+      {% if upo_style %}
+          <link href="{% static 'gentelella/css/custom_upo.css' %}?v={% get_version %}" rel="stylesheet">
+      {% endif %}
+
+      {% if upo_black_and_white_style %}
+          <link href="{% static 'gentelella/css/custom_upo_black_white.css' %}?v={% get_version %}" rel="stylesheet">
+      {% endif %}
+
+      {% endblock head %}
     {% block extra_css %} {% endblock %}
     <!-- jQuery -->
     <script src="{% static 'vendors/jquery/jquery.min.js' %}?v={% get_version %}"></script>
