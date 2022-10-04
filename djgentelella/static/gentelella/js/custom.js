@@ -536,7 +536,7 @@ window.addEventListener('resize', function(){
          $("#items-top-navbar").addClass("flex-row-reverse");
 
     }else if(screen.width<991){
-    console.log("remover")
+   
          $("#items-top-navbar").removeClass("flex-row-reverse");
     }
 })()
