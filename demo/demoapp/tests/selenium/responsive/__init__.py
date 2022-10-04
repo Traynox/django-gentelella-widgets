@@ -57,7 +57,11 @@ class ScreenshotSeleniumTest(StaticLiveServerTestCase):
             {'name': 'gigapixel_view'},
             {'name': 'mapbased_view'},
             {'name': 'storyline_view'},
-            {'name': 'timeline_view'}]
+            {'name': 'timeline_view'},
+            {'name': 'add_formset'},
+            {'name': 'add_model_formset'},
+            {'name': 'create_notification'},
+            {'name': 'markitup_preview'}]
 
         cls.selenium = WebDriver()
         cls.selenium.implicitly_wait(cls.timeout)
