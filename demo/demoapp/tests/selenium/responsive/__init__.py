@@ -4,8 +4,9 @@ from django.urls import reverse
 from selenium.webdriver.firefox.webdriver import WebDriver
 from pathlib import Path
 from django.conf import settings
-import shutil
-from Screenshot import Screenshot
+from demoapp.urls import urlpatterns
+#import shutil
+#from Screenshot import Screenshot
 
 class ScreenshotSeleniumTest(StaticLiveServerTestCase):
     @classmethod
@@ -32,17 +33,41 @@ class ScreenshotSeleniumTest(StaticLiveServerTestCase):
                          {'width': 800, 'height': 1280},
                          {'width': 601, 'height': 962},
                          {'width': 962, 'height': 601}]
-
-        cls.ob = Screenshot.Screenshot()
+        cls.paths=[{'name': 'input-mask-edit'},
+                   {'name': 'input-mask-list'},
+                   {'name': 'date-range-add'},
+                   {'name': 'date-range-edit'},
+                   {'name': 'date-range-list'},
+                   {'name': 'chartjs_view'},
+                   {'name': 'input_tagging-add'},
+                   {'name': 'input_tagging-edit'},
+                   {'name': 'input_tagging-list'},
+                   {'name': 'tinymce-add'},
+                   {'name': 'tinymce-list'},
+                   {'name': 'tinymce-edit'},
+                   {'name': 'tinymce-show'},
+                   {'name': 'yes-no-input-add'},
+                   {'name': 'grid-slider-add'},
+                   {'name': 'grid-slider-list'},
+                   {'name': 'chunkeduploaditem-add'},
+                   {'name': 'chunkeduploaditem-list'},
+                   {'name': 'chunkeduploaditem-edit'},
+                   {'name': 'gigapixel_view'},
+                   {'name': 'mapbased_view'},
+                   {'name': 'storyline_view'},
+                   {'name': 'timeline_view'}]
+        #cls.ob = Screenshot.Screenshot()
         cls.selenium = WebDriver()
         cls.selenium.implicitly_wait(cls.timeout)
 
         cls.width = cls.resolutions[0]['width']
         cls.height = cls.resolutions[0]['height']
         cls.tmp = Path(settings.BASE_DIR) / 'tmp'
-        cls.folder = '%s/%dx%d' % (cls.tmp, cls.width, cls.height)
-        cls.dir = Path(settings.BASE_DIR) / cls.folder
-        cls.server_thread.port = 8012
+        #cls.folder = '%s/%dx%d' % (cls.tmp, cls.width, cls.height)
+        #cls.dir = Path(settings.BASE_DIR) / cls.folder
+        cls.folder = ''
+        cls.dir = ''
+        cls.server_thread.port = 8012 #puerto de entorno virtual porque no carga elementos dinamicos de la base de datos
         if not cls.tmp.exists():
            cls.tmp.mkdir()
 
@@ -51,15 +76,15 @@ class ScreenshotSeleniumTest(StaticLiveServerTestCase):
 
         for resolution in self.resolutions:
 
-            self.selenium.set_window_size(resolution['width'],resolution['height'])
+            self.selenium.set_window_size(resolution['width'], resolution['height'])
 
             print("Window size: width = {}px, height = {}px".format(resolution['width'], resolution['height']))
 
             x_Page = 'PAGE_SCREENSHOT_%s.png' % name
             x_Full_Page = 'Full_PAGE_SCREENSHOT_%s.png' % name
             self.folder = '%s/%dx%d' % (self.tmp, resolution['width'], resolution['height'])
-            self.dir = Path(settings.BASE_DIR) / self.folder
-
+            #self.dir = Path(settings.BASE_DIR) / self.folder
+            self.dir = self.folder
             if not self.dir.exists():
                 self.dir.mkdir()
 
@@ -67,12 +92,15 @@ class ScreenshotSeleniumTest(StaticLiveServerTestCase):
             self.selenium.save_full_page_screenshot(str(Path(self.dir / x_Full_Page).absolute().resolve()))
 
     def test_snaptshot(self):
-        name = 'home'
-        url = self.live_server_url + str(reverse(name))
-        self.selenium.get(url)
+       # name = 'home'
+       # url = self.live_server_url + str(reverse(name))
         print("Headless Firefox Initialized")
         print(self.selenium.get_window_size())
-        self.screenShots(name, url)
+        for path in self.paths:
+            name = path['name']
+            url = self.live_server_url + str(reverse(name))
+            self.screenShots(name, url)
+
     @classmethod
     def tearDownClass(cls):
         cls.selenium.quit()
